@@ -1,0 +1,17 @@
+<div class="height-class is-flex is-flex-direction-column is-justify-content-centered py-6 has-text-centered" style="border: 1px solid red">
+<h1 class='has-text-weight-bold title is-4'>Sign up</h1>
+
+<div class="row">
+  <div class="col-md-6 offset-3 has-text-start">
+    <%= form_with(model: @user, local: true) do |f| %>
+
+      <%= f.label :name, class: 'has-text-weight-bold' %>
+      <%= f.text_field :name, class: 'mb-1 form-control' %>
+
+      <%= f.submit "Create my account", class: "button is-primary mt-5 px-6" %>
+    <% end %>
+  </div>
+  <%= link_to "Log in", login_path, class: "my-2 button" %>
+</div>
+</div>
+
