@@ -10,10 +10,22 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_04_09_173437) do
+ActiveRecord::Schema.define(version: 2021_04_10_214914) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "entities", force: :cascade do |t|
+    t.string "name"
+    t.float "amount"
+    t.date "createat"
+    t.bigint "user_id", null: false
+    t.bigint "group_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["group_id"], name: "index_entities_on_group_id"
+    t.index ["user_id"], name: "index_entities_on_user_id"
+  end
 
   create_table "groups", force: :cascade do |t|
     t.string "name"
@@ -30,5 +42,7 @@ ActiveRecord::Schema.define(version: 2021_04_09_173437) do
     t.datetime "updated_at", precision: 6, null: false
   end
 
+  add_foreign_key "entities", "groups"
+  add_foreign_key "entities", "users"
   add_foreign_key "groups", "users"
 end
