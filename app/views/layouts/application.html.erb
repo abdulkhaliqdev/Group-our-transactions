@@ -9,11 +9,12 @@
     <%= javascript_tag 'application', 'data-turbolinks-track': 'reload' %>
     <%= stylesheet_link_tag "https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" %>
   </head>
-
   <body id="Mainclass">
     <header class="navbar-class">
-      <i class="fa fa-bars"></i> 
-      <%= link_to 'Transaction',root_path %>
+      <%= link_to current_user do %>
+        <i class="fa fa-bars"></i>
+      <% end %>
+      <%= link_to 'Transaction',current_user %>
       <i class="fa fa-search"></i>
     </header>
     <% if  flash[:notice] %>
