@@ -1,9 +1,11 @@
+# frozen_string_literal: true
+
 Rails.application.routes.draw do
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
   root 'groups#home'
   get '/signup', to: 'users#new'
-  resources :users, only: [:show, :create]
-  resources :groups, only: [:index, :show, :new, :create]
+  resources :users, only: %i[show create]
+  resources :groups, only: %i[index show new create]
 
   get    '/login' => 'sessions#new'
   post   '/login' => 'sessions#create'
