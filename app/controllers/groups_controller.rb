@@ -10,7 +10,7 @@ class GroupsController < ApplicationController
   end
 
   def create
-    @groups = current_user.items.build(item_params)
+    @groups = current_user.items.build(group_params)
     if @item.save
       flash[:notice] = 'Group has been created!'
       redirect_to @group
