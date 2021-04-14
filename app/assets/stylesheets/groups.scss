@@ -7,3 +7,34 @@
 .height-class {
   height: 80vh;
 }
+
+.group-page-height{
+  height: 80vh;  
+}
+
+.scroll {
+  overflow-y: scroll;
+  width: auto;
+}
+
+.create_button_position{
+  display: block;
+  position: relative;
+  bottom: 0;
+}
+
+.card_design {
+  display: flex;
+  flex-direction: row;
+  font-size: x-large;
+  align-items: center;
+  i {
+    align-items: center;
+  }
+}
+
+.card-date {
+  padding: 6px 2px;
+  font-size: 10px;
+  font-weight: 500;
+}

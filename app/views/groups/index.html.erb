@@ -1,0 +1,19 @@
+<div class="height-class scroll">
+<% @groups.each do |gup|%>
+  <div class="card m-2 card-radius">
+    <div class="card_design is-align-content-baseline">
+      <i class='<%= gup.Icon %> image p-1'></i>
+      <div class="title is-5">
+        <%= gup.name %>
+      </div>
+    </div>
+    <div class="card-date">
+      <%= gup.created_at.strftime("%B/%d/%Y")%>
+    </div>
+  </div>
+<% end %>
+</div>
+
+<p class="control has-text-centered create_button_position my-2">
+  <%= link_to 'Create New Group', new_group_path, class: "button is-success" %>
+</p>
