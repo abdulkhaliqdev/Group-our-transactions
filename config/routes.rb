@@ -6,6 +6,7 @@ Rails.application.routes.draw do
   get '/signup', to: 'users#new'
   resources :users, only: %i[show create]
   resources :groups, only: %i[index show new create]
+  resources :transactions, only: %i[index show new create]
 
   get    '/login' => 'sessions#new'
   post   '/login' => 'sessions#create'

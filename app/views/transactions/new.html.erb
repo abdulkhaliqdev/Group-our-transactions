@@ -1,0 +1,18 @@
+<div class="row height-class" style="border:1px solid red">
+  <div class="col-md-6 offset-3 is-centered has-text-centered "  style="border:1px solid blue">
+    <%= form_for @transaction do |f| %>
+
+      <%= f.text_field :name, required: true, class: 'mb-1 form-control mx-0',placeholder: 'Name' %>
+
+      <%= f.number_field :amount, class: 'form-control',placeholder: 'Amount' %>
+      <br>
+      <%= f.label :group_id, class: 'form-text' %>
+      <%= f.collection_select :group_id, Group.all, :id, :name, prompt: true %>
+
+      <%= f.hidden_field :user_id, value: current_user.id %>
+      
+      <%= f.submit "Create Transaction", class: "button is-success mt-5 px-6" %>
+    <% end %>
+  </div>
+</div>
+</div>

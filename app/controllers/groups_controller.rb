@@ -19,7 +19,7 @@ class GroupsController < ApplicationController
   end
 
   def index
-    @groups = Group.all.order('name')
+    @groups = Group.all
   end
 
   def show

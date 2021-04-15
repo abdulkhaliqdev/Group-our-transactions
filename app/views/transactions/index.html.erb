@@ -1,0 +1,19 @@
+<div class="height-class scroll">
+<%= number_with_precision(@transactions.sum(:amount)) %>
+<% @transactions.each do |gup|%>
+  <div class="card m-2 card-radius has-text-centered">
+    <div class="title is-5 card_design is-align-content-baseline">
+        <%= gup.name %> <br>
+        <%= gup.amount %> <br>
+        <%= gup.group_id %>
+    </div>
+    <div class="card-date">
+      <%= gup.created_at.strftime("%B/%d/%Y")%>
+    </div>
+  </div>
+<% end %>
+</div>
+
+<p class="control has-text-centered create_button_position my-2">
+  <%= link_to 'Create New Transaction', new_transaction_path, class: "button is-success" %>
+</p>
