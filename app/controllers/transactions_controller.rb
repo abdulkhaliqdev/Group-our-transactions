@@ -6,7 +6,7 @@ class TransactionsController < ApplicationController
   end
 
   def index
-    @transactions = Transaction.all
+    @transactions = Transaction.with_group.where(user_id: current_user.id)
   end
 
   def new

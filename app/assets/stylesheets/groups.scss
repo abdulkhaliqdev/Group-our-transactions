@@ -38,3 +38,14 @@
   font-size: 10px;
   font-weight: 500;
 }
+
+.width_height {
+  width: inherit;
+  height: inherit;
+}
+
+.form_border {
+  border: 2px solid white;
+  margin: 1rem;
+  border-radius: 8px;
+}

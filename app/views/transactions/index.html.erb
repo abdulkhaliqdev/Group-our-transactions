@@ -1,11 +1,21 @@
-<div class="height-class scroll">
-<%= number_with_precision(@transactions.sum(:amount)) %>
+<div class="height-class scroll background_images">
+<div class="px-3 is-flex is-justify-content-space-between has-text-white has-text-weight-bold has-text-centered has-background-light has-text-black">
+  <span>
+    <%= "Total Amount" %>
+  </span>
+  <span>
+    <%= "$#{number_with_precision(@transactions.sum(:amount))}" %>
+  </span>
+</div>
 <% @transactions.each do |gup|%>
-  <div class="card m-2 card-radius has-text-centered">
-    <div class="title is-5 card_design is-align-content-baseline">
-        <%= gup.name %> <br>
-        <%= gup.amount %> <br>
-        <%= gup.group_id %>
+  <div class="card m-2 card-radius">
+    <div class="title is-5 card_design is-align-content-baseline is-flex is-justify-content-space-between mx-3 mb-0">
+      <span>
+          <%= gup.name.upcase %>
+      </span>
+      <span>
+          <%= gup.amount %>
+      </span>
     </div>
     <div class="card-date">
       <%= gup.created_at.strftime("%B/%d/%Y")%>
@@ -14,6 +24,6 @@
 <% end %>
 </div>
 
-<p class="control has-text-centered create_button_position my-2">
+<p class="control has-text-centered create_button_position py-2 background_images">
   <%= link_to 'Create New Transaction', new_transaction_path, class: "button is-success" %>
 </p>

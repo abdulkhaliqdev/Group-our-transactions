@@ -1,18 +1,20 @@
-<div class="row height-class" style="border:1px solid red">
-  <div class="col-md-6 offset-3 is-centered has-text-centered "  style="border:1px solid blue">
-    <%= form_for @transaction do |f| %>
+<div class="row height-class background_images">
+  <div class="col-md-6 offset-3 is-centered has-text-centered m-3">
+    <%= form_for @transaction do |f| %>  
 
-      <%= f.text_field :name, required: true, class: 'mb-1 form-control mx-0',placeholder: 'Name' %>
-
-      <%= f.number_field :amount, class: 'form-control',placeholder: 'Amount' %>
-      <br>
-      <%= f.label :group_id, class: 'form-text' %>
-      <%= f.collection_select :group_id, Group.all, :id, :name, prompt: true %>
-
+      <div class="m-2">
+        <%= f.text_field :name, required: true, class: 'input',placeholder: 'Name' %>
+      </div>
+      <div class="m-2">
+        <%= f.number_field :amount, class: 'input',placeholder: 'Amount' %>
+      </div>
+      <div class="dropdown is-active has-text-weight-bold m-3">
+        <%= f.label :group_id,class: 'has-text-white dropdown is-active mx-2' %>
+        <%= f.collection_select :group_id, Group.all, :id, :name, prompt: true %>
+      </div>
       <%= f.hidden_field :user_id, value: current_user.id %>
-      
-      <%= f.submit "Create Transaction", class: "button is-success mt-5 px-6" %>
+    
+      <%= f.submit "Create Transaction", class: "button is-success mt-5 px-6 m-3" %>
     <% end %>
   </div>
-</div>
 </div>

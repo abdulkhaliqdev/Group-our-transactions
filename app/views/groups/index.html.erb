@@ -1,4 +1,4 @@
-<div class="height-class scroll">
+<div class="height-class scroll background_images">
 <% @groups.each do |gup|%>
   <div class="card m-2 card-radius">
     <div class="card_design is-align-content-baseline">
@@ -14,6 +14,6 @@
 <% end %>
 </div>
 
-<p class="control has-text-centered create_button_position my-2">
+<p class="control has-text-centered create_button_position py-2 background_images">
   <%= link_to 'Create New Group', new_group_path, class: "button is-success" %>
 </p>
