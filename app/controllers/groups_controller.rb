@@ -24,14 +24,10 @@ class GroupsController < ApplicationController
 
   def show
     @group = Group.find_by(id: params[:id])
-    # @transactions = Transaction.includes(:group, :user).where(group_id: @group.id).order('created_at DESC')
+    @trans = Transaction.where(group_id: @group.id)
   end
 
   private
-  def set_group
-    @group = Group.find(params[:id])
-  end
-
   def group_params
     params.require(:group).permit(:name, :icon)
   end

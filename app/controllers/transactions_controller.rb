@@ -3,10 +3,11 @@ class TransactionsController < ApplicationController
 
   def show
     @transaction = Transaction.find_by(id: params[:id])
+    @group = Group.where(id: @transaction.group_id)
   end
 
   def index
-    @transactions = Transaction.with_group.where(user_id: current_user.id)
+    @transactions = Transaction.with_group(current_user.id).where(user_id: current_user.id)
   end
 
   def new
@@ -19,7 +20,7 @@ class TransactionsController < ApplicationController
       flash[:notice] = "#{@transaction.name} Transaction successfully created"
       redirect_to transactions_path
     else
-      flash.now[:alert] = "#{@transaction.name}==#{@transaction.amount}==#{@transaction.group_id}==#{@transaction.user_id}"
+      flash.now[:alert] = "#{@transaction.error}"
       render 'new'
     end
   end

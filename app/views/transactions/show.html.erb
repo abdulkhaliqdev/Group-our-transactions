@@ -1,0 +1,17 @@
+<div class="height-class scroll background_images">
+  <div class="control is-flex is-flex-direction-column">
+    <h1 class= 'title is-2 mt-4 has-text-centered has-text-white'>
+      <%= @transaction.name%>
+    </h1>
+    <h2 class="title is-5 has-text-white has-text-centered">
+      <%= "$#{@transaction.amount}" %>
+    </h2>
+    <h4 class="has-text-white has-text-centered has-text-weight-bold">
+      <%= "Created By: #{find_user(@transaction.user_id).name.upcase}" %>
+    </h4>
+  </div>
+</div>
+
+<p class="control has-text-centered create_button_position py-2 background_images">
+  <%= link_to "Back", :back , class:"button is-success" %>
+</p>

@@ -3,12 +3,12 @@
     <div class="col-md-6 offset-3 has-text-start form_border">
       <%= form_for @groups do |f| %>
         <div class="m-3">
-          <%= f.text_field :name, required: true, class: 'input', placeholder: "Name"%>
+          <%= f.text_field :name, required: true, minlength: 4, class: 'input', placeholder: "Name"%>
         </div>
         <div class="m-3 is-flex has-text-white is-flex-direction-column">
           <%= f.label :icon, class: "checkbox" %>
           <div class="checkbox">
-            <%= radio_button_tag(:icon, "fa fa-500px") %>    
+            <%= radio_button_tag(:icon, "fa fa-500px",required: true) %>    
             <i class="fa fa-500px"></i>
           </div>
           <div class="checkbox">
