@@ -8,8 +8,8 @@
   height: inherit;
 }
 
-.group-page-height{
-  height: 80vh;  
+.group-page-height {
+  height: 80vh;
 }
 
 .scroll {
@@ -17,7 +17,7 @@
   width: auto;
 }
 
-.create_button_position{
+.create_button_position {
   display: block;
   position: relative;
   bottom: 0;
@@ -28,11 +28,11 @@
   flex-direction: row;
   font-size: x-large;
   align-items: center;
+
   i {
     align-items: center;
   }
 }
-
 
 .border-design {
   border: 2px solid black;
