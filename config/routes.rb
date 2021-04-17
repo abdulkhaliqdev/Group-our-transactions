@@ -8,6 +8,9 @@ Rails.application.routes.draw do
   resources :groups, only: %i[index new create show]
   resources :transactions, only: %i[index new create show]
 
+  get '/externaltransaction', to: 'transactions#external'
+
+
   get    '/login' => 'sessions#new'
   post   '/login' => 'sessions#create'
   get '/logout' => 'sessions#destroy'

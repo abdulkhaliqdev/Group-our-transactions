@@ -8,7 +8,7 @@
   <div class="has-text-left">
     <p class="control mr-3">
       <i class="fa fa-cog icon-border" aria-hidden="true"></i>
-      <%= link_to 'All Transaction', transactions_path, class: "has-text-white" %>
+      <%= link_to 'My Transaction', transactions_path, class: "has-text-white" %>
       <hr class="hr-class">
     </p>
     <p class="control mr-3">
@@ -18,7 +18,17 @@
     </p>
     <p class="control mr-3">
       <i class="fa fa-gift icon-border" aria-hidden="true"></i>
-      <%= link_to 'All External Transaction', current_user, class: "has-text-white" %>
+      <%= link_to 'All External Transaction', externaltransaction_path , class: "has-text-white" %>
+      <hr class="hr-class">
+    </p>
+    <p class="control mr-3">
+      <i class="fa fa-plus icon-border" aria-hidden="true"></i>
+      <%= link_to 'Create new Transaction', new_transaction_path , class: "has-text-white" %>
+      <hr class="hr-class">
+    </p>
+    <p class="control mr-3">
+      <i class="fa fa-plus icon-border" aria-hidden="true"></i>
+      <%= link_to 'Create new Group', new_group_path , class: "has-text-white" %>
       <hr class="hr-class">
     </p>
     <p class="control">

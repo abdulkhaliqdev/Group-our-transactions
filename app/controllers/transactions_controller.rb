@@ -7,7 +7,11 @@ class TransactionsController < ApplicationController
   end
 
   def index
-    @transactions = Transaction.with_group(current_user.id).where(user_id: current_user.id)
+    @transactions = Transaction.with_user(current_user.id).where(user_id: current_user.id)
+  end
+
+  def external
+    @external_transactions = Transaction.where.not(user_id: current_user.id)
   end
 
   def new
@@ -20,7 +24,7 @@ class TransactionsController < ApplicationController
       flash[:notice] = "#{@transaction.name} Transaction successfully created"
       redirect_to transactions_path
     else
-      flash.now[:alert] = "#{@transaction.error}"
+      flash.now[:alert] = "#{@transaction.name} Transaction unable created"
       render 'new'
     end
   end
