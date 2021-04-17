@@ -1,16 +1,32 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>GroupOurTransactions</title>
+    <title>Eventbride</title>
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
-
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-    <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <%= stylesheet_link_tag "https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" %>
   </head>
-
-  <body>
+  <body id="Mainclass">
+    <header class="navbar-class">
+      <%= link_to current_user do %>
+        <i class="fa fa-bars"></i>
+      <% end %>
+      <%= link_to 'Transaction',current_user %>
+      <i class="fa fa-search"></i>
+    </header>
+    <% if  flash[:notice] %>
+      <div class="notification is-primary global-notification m-0 p-0 has-text-centered">
+        <p class="notice"><%= notice %></p>
+      </div>
+    <% end %>
+    <% if  flash[:alert] %>
+      <div class="notification is-danger global-notification m-0 p-0 has-text-centered">
+        <p class="alert"><%= alert %></p>
+      </div>
+    <% end %>
     <%= yield %>
   </body>
 </html>

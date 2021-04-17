@@ -1,0 +1,45 @@
+<div class="width_height background_images">
+  <div class="row">
+    <div class="col-md-6 offset-3 has-text-start form_border">
+      <%= form_for @groups do |f| %>
+        <div class="m-3">
+          <%= f.text_field :name, required: true, minlength: 4, class: 'input', placeholder: "Name"%>
+        </div>
+        <div class="m-3 is-flex has-text-white is-flex-direction-column">
+          <%= f.label :icon, class: "checkbox" %>
+          <div class="checkbox">
+            <%= radio_button_tag(:icon, "fa fa-500px",required: true) %>    
+            <i class="fa fa-500px"></i>
+          </div>
+          <div class="checkbox">
+            <%= radio_button_tag(:icon, "fa fa-american-sign-language-interpreting") %>    
+            <i class="fa fa-american-sign-language-interpreting "></i>
+          </div>
+          <div class="checkbox">
+            <%= radio_button_tag(:icon, "fa fa-grav") %>    
+            <i class="fa fa-grav"></i>
+          </div>
+          <div class="checkbox">
+            <%= radio_button_tag(:icon, "fa fa-bandcamp") %>    
+            <i class="fa fa-bandcamp"></i>
+          </div>
+          <div class="checkbox">
+            <%= radio_button_tag(:icon, "fa fa-balance-scale") %>    
+            <i class="fa fa-balance-scale"></i>
+          </div>
+          <div class="checkbox">
+            <%= radio_button_tag(:icon, "fa fa-audio-description") %>    
+            <i class="fa fa-audio-description"></i>
+          </div>
+          <div class="checkbox">
+            <%= radio_button_tag(:icon, "fa fa-cubes") %>    
+            <i class="fa fa-cubes"></i>
+          </div>
+
+        </div>
+
+        <%= f.submit "Create Group", class: "button is-success px-6 m-3 mx-5" %>
+      <% end %>
+    </div>
+  </div>
+</div>

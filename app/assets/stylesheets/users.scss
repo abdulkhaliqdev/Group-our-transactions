@@ -1,0 +1,33 @@
+// Place all the styles related to the Users controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+.profile-page {
+  position: absolute;
+  width: inherit;
+  height: inherit;
+  background-image: linear-gradient(to bottom right, rgb(114, 134, 214), rgb(36, 7, 165));
+  transition: all 0.5s ease 0s;
+
+  p {
+    color: whitesmoke;
+  }
+}
+
+.profile-image-design {
+  margin-top: 2rem;
+  border-radius: 50%;
+}
+
+.icon-border {
+  margin-left: 2rem;
+  margin-right: 1rem;
+  border-radius: 50%;
+  border: 1px solid white;
+  padding: 6px 8px;
+}
+
+.hr-class {
+  margin: 1rem auto;
+  margin-left: 4rem;
+}

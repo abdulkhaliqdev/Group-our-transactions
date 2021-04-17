@@ -10,9 +10,40 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 0) do
+ActiveRecord::Schema.define(version: 2021_04_15_104351) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
+  create_table "groups", force: :cascade do |t|
+    t.string "name"
+    t.string "Icon"
+    t.bigint "user_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.integer "transaction_id"
+    t.index ["user_id"], name: "index_groups_on_user_id"
+  end
+
+  create_table "transactions", force: :cascade do |t|
+    t.string "name"
+    t.float "amount"
+    t.bigint "group_id", null: false
+    t.bigint "user_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["group_id"], name: "index_transactions_on_group_id"
+    t.index ["user_id"], name: "index_transactions_on_user_id"
+  end
+
+  create_table "users", force: :cascade do |t|
+    t.string "name"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
+  add_foreign_key "groups", "transactions"
+  add_foreign_key "groups", "users"
+  add_foreign_key "transactions", "groups"
+  add_foreign_key "transactions", "users"
 end

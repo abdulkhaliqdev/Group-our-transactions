@@ -1,0 +1,39 @@
+<div class="profile-page has-text-centered">
+  <div class="control mr-5 mb-3">
+    <img class="profile-image-design" src="http://www.gravatar.com/avatar/3b3be63a4c2a439b013787725dfce802?d=identicon" alt="profile-pic">
+    <h2 class="title is-5 has-text-white">
+      <%= current_user.name.upcase %>
+    </h2>
+  </div>
+  <div class="has-text-left">
+    <p class="control mr-3">
+      <i class="fa fa-cog icon-border" aria-hidden="true"></i>
+      <%= link_to 'My Transaction', transactions_path, class: "has-text-white" %>
+      <hr class="hr-class">
+    </p>
+    <p class="control mr-3">
+      <i class="fa fa-map-marker icon-border" aria-hidden="true"></i>
+      <%= link_to 'All Group', groups_path, class: "has-text-white" %>
+      <hr class="hr-class">
+    </p>
+    <p class="control mr-3">
+      <i class="fa fa-gift icon-border" aria-hidden="true"></i>
+      <%= link_to 'All External Transaction', externaltransaction_path , class: "has-text-white" %>
+      <hr class="hr-class">
+    </p>
+    <p class="control mr-3">
+      <i class="fa fa-plus icon-border" aria-hidden="true"></i>
+      <%= link_to 'Create new Transaction', new_transaction_path , class: "has-text-white" %>
+      <hr class="hr-class">
+    </p>
+    <p class="control mr-3">
+      <i class="fa fa-plus icon-border" aria-hidden="true"></i>
+      <%= link_to 'Create new Group', new_group_path , class: "has-text-white" %>
+      <hr class="hr-class">
+    </p>
+    <p class="control">
+      <i class="fa fa-sign-out icon-border" aria-hidden="true"></i>
+      <%= link_to 'Log Out', logout_url, class: "has-text-white" %>
+    </p>
+  </div>
+</div>
