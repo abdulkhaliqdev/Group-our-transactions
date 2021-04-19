@@ -6,9 +6,11 @@ class SessionsController < ApplicationController
 
     if @user
       session[:user_id] = @user.id
-      redirect_to current_user, notice: 'User was successfully SignIn.'
+      flash[:notice] = 'User was successfully SignIn.'
+      redirect_to current_user
     else
-      redirect_to '/login', alert: 'Unable to locat the User'
+      flash[:alert] = 'Unable to locat the User'
+      redirect_to '/login'
     end
   end
 
