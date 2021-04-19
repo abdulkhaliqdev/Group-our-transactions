@@ -25,7 +25,6 @@
 - Rspec Rails v5.0
 - Bulma Rails v0.9.1
 - Capybara v3.26
-- Devises v5.4.0
 - shoulda-matchers v4.0
 - font-awesome scss v5.15.1
 - simple-form v5.1
@@ -45,28 +44,47 @@ To get a local copy up and running follow these simple example steps.
 - Node v10.19.0 - v14.15.5
 - Bundle v2.2.3
 
-### Setup
+### Set up
 
-Install gems with:
+To get a local copy of this repository enter the following command in you terminal:
+
+```
+    git clone https://github.com/abdulkhaliqdev/Group-our-transactions.git
+```
+
+Or download this repository and unzip it.
+
+### Installation
+
+- From the project's root directory execute 'bundle install' to install the necessary gems:
 
 ```
     bundle install
 ```
 
-Setup database with:
+- Then run yarn to install all the node dependancies:
 
 ```
-   rails db:create
-   rails db:migrate
+    yarn
+```
+
+- Make a migration of the database:
+
+```
+    rails db:create
+    rails db:migrate
 ```
 
 ### Usage
 
-Start server with:
+- In the project's root directory execute the 'rails server' command:
 
 ```
-    rails server
+    rails s
 ```
+
+- Open in your browser
+
 
 Open `http://localhost:3000/` in your browser.
 
