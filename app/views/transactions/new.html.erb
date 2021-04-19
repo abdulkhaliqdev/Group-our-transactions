@@ -8,7 +8,7 @@
       <div class="m-2">
         <%= f.number_field :amount, required: true, class: 'input',placeholder: 'Amount' %>
       </div>
-      <div class="dropdown is-active has-text-weight-bold m-3">
+      <div class="dropdown is-active has-text-weight-bold m-3" id="group_id">
         <%= f.label :group_id,class: 'has-text-white dropdown is-active mx-2' %>
         <%= f.collection_select(:group_id, Group.all, :id, :name, {:prompt => 'Select Group'}, {:required => true}) %>
       </div>
