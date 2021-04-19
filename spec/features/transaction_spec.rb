@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-RSpec.feature "Transactions", type: :feature do
+RSpec.feature 'Transactions', type: :feature do
   let(:user) { User.new(name: 'abdul12', id: 1) }
   let(:group) { Group.new(id: 1, name: 'abdul12', Icon: 'fa fa-500px', user_id: user.id) }
   let(:transaction) { Transaction.new(id: 1, name: 'abdulkhaliq', amount: 12, group_id: group.id, user_id: user.id) }

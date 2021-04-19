@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-RSpec.feature "Groups", type: :feature do
+RSpec.feature 'Groups', type: :feature do
   let(:user) { User.new(name: 'abdul12', id: 1) }
   let(:group) { Group.new(name: 'abdul12', Icon: 'fa fa-cubes', user_id: user.id) }
 

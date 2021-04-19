@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-RSpec.feature "Sessions", type: :feature do
+RSpec.feature 'Sessions', type: :feature do
   let(:user) { User.new(name: 'abdul12', id: 1) }
 
   def login_user(user)
