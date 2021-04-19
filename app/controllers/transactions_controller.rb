@@ -24,7 +24,7 @@ class TransactionsController < ApplicationController
       flash[:notice] = "#{@transaction.name} Transaction successfully created"
       redirect_to transactions_path
     else
-      flash.now[:alert] = "#{@transaction.name} Transaction unable created"
+      flash[:alert] = "#{@transaction.name} Transaction unable created"
       render 'new'
     end
   end
