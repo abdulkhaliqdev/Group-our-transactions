@@ -13,6 +13,7 @@ class TransactionsController < ApplicationController
 
   def withoutgroup
     @transactions = Transaction.with_group(current_user.id).where(user_id: current_user.id)
+    @amount_sum = @transactions.sum('amount')
   end
 
   def external
