@@ -10,7 +10,7 @@
       </div>
       <div class="dropdown is-active has-text-weight-bold m-3" id="group_id">
         <%= f.label :group_id,class: 'has-text-white dropdown is-active mx-2' %>
-        <%= f.collection_select(:group_id, Group.all, :id, :name, {:prompt => 'Select Group'}, {:required => true}) %>
+        <%= f.collection_select(:group_id, Group.all, :id, :name, {:prompt => 'Select Group'}) %>
       </div>
       <%= f.hidden_field :user_id, value: current_user.id %>
     
