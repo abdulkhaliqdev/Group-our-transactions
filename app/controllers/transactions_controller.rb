@@ -7,11 +7,16 @@ class TransactionsController < ApplicationController
   end
 
   def index
-    @transactions = Transaction.with_user(current_user.id).where(user_id: current_user.id)
+    @transactions = Transaction.all_transactoins(current_user.id)
+    @amount_sum = @transactions.sum('amount')
+  end
+
+  def withoutgroup
+    @transactions = Transaction.with_group(current_user.id).where(user_id: current_user.id)
   end
 
   def external
-    @external_transactions = Transaction.where.not(user_id: current_user.id)
+    @external_transactions = Transaction.where(group_id: nil)
   end
 
   def new
