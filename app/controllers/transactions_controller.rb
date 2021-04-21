@@ -3,21 +3,21 @@ class TransactionsController < ApplicationController
 
   def show
     @transaction = Transaction.find_by(id: params[:id])
-    @group = Group.where(id: @transaction.group_id)
+    @group = Group.find_group(@transaction.group_id)
   end
 
   def index
-    @transactions = Transaction.all_transactoins(current_user.id)
+    @transactions = Transaction.all_transactoins(current_user.id).recent
     @amount_sum = @transactions.sum('amount')
   end
 
   def withoutgroup
-    @transactions = Transaction.with_group(current_user.id).where(user_id: current_user.id)
+    @transactions = Transaction.where(group_id: nil).recent
     @amount_sum = @transactions.sum('amount')
   end
 
   def external
-    @external_transactions = Transaction.where(group_id: nil)
+    @external_transactions = Transaction.with_group(current_user.id).where(user_id: current_user.id).recent
   end
 
   def new

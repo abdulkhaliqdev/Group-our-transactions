@@ -11,4 +11,7 @@ class Transaction < ApplicationRecord
   scope :all_transactoins, ->(id) { where('user_id=?', id) }
   scope :check_group, -> { where('group_id =? ', group_id) }
   scope :without_user, ->(user_id) { where.not('user_id=?', user_id) }
+
+  scope :find_group, ->(id) { where('group_id=?', id) }
+  scope :recent, -> { order('created_at DESC') }
 end

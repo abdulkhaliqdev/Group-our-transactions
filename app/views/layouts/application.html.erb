@@ -17,16 +17,7 @@
       <%= link_to 'Transaction',current_user %>
       <i class="fa fa-search"></i>
     </header>
-    <% if  flash[:notice] %>
-      <div class="notification is-primary global-notification m-0 p-0 has-text-centered">
-        <p class="notice"><%= notice %></p>
-      </div>
-    <% end %>
-    <% if  flash[:alert] %>
-      <div class="notification is-danger global-notification m-0 p-0 has-text-centered">
-        <p class="alert"><%= alert %></p>
-      </div>
-    <% end %>
+    <%= display_error_and_success %>
     <%= yield %>
   </body>
 </html>
