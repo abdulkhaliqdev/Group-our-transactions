@@ -4,6 +4,8 @@ class Transaction < ApplicationRecord
   validates :amount, presence: true
   validates :user_id, presence: true
   validates :group_id, presence: false
+
+  has_many :manifests
   has_many :group, through: :manifests
 
   scope :with_group, ->(id) { where('group_id > 0 and user_id=?', id) }

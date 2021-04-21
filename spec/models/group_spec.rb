@@ -27,7 +27,7 @@ RSpec.describe Group, type: :model do
       should belong_to(:user)
     end
     it 'It has many Transaction' do
-      should have_many(:transactions)
+      should respond_to(:transactions)
     end
   end
 end
