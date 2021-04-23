@@ -23,7 +23,7 @@ class GroupsController < ApplicationController
 
   def show
     @group = Group.find_by(id: params[:id])
-    @trans = Transaction.where(group_id: @group.id)
+    @trans = Transaction.find_group(@group.id)
   end
 
   private

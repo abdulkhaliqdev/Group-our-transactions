@@ -1,6 +1,6 @@
 # Open for Friends
 
-> Social media app Build with ruby on rails. In this app users are able to create new Group where he will be able to do transaction some donation.
+> This Project was built with Ruby on Rails. It has three models: User, which handles user sign-ups, through a simple form with the just name field, The creation of a session was implemented to log in the users and only logged-in users. The Group, which handles the creation of Groups through a title(name) field, an Icon, and a date 'select'. The associations were made through setting aliases to the user as the User_id of the group. The Transaction, which handles the creation of Transaction through a title(name) field, an Amount, group_id, user_id, and a date 'select'. The associations were made through setting aliases to the user as the User_id of the Transaction. The associations were made between group and transaction with many-to-many relationships through group_id and transaction_id. Bulma was our choice of CSS framework for the UI. Rspec and Capybara were used to create the test for the project with the help of Shoulda_Matchers.
 
 ## Screen Shot
 
@@ -16,7 +16,7 @@
 
 ## Live Demo
 
-[Demo](https://mysterious-tundra-66669.herokuapp.com/)
+[Demo](https://nameless-brushlands-87303.herokuapp.com/)
 
 ## Built With
 
